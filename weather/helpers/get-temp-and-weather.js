@@ -1,4 +1,4 @@
-const { prop, compose, head, assoc, objOf, path } = require('ramda')
+const { prop, compose, head, assoc, objOf, path, of } = require('ramda')
 const Future = require('fluture')
 
 const getTempAndWeather = data =>
@@ -21,6 +21,7 @@ const getTempAndWeather = data =>
 const futureGetTempAndWeather =
   compose(
     Future.of,
+    of,
     getTempAndWeather,
     JSON.parse
   )

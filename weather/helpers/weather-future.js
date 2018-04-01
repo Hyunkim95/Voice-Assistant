@@ -11,12 +11,10 @@ const options = state => {
   })
 }
 
-const forecastFuture = res => fn =>
+const weatherFuture =
   compose(
-    fork(res),
-    chain(fn),
     futureRequest,
     options
   )
 
-module.exports = forecastFuture
+module.exports = weatherFuture
