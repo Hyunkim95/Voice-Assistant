@@ -1,33 +1,18 @@
-const appMethods = require('../lib/utils/app-methods')
+const getMethod = require('../lib/utils/get-method')
 const { 
   getLights, 
   turnOnLights, 
   turnOffLights 
 } = require('./methods')
 
-const getLifx = app =>
-  appMethods({ 
-    app,
-    method: 'get',
-    path: '/',
-    fn: getLights
-  })
+const getLifx =
+  getMethod({ path: '/', fn: getLights })
 
-const turnOn = app => 
-  appMethods({ 
-    app,
-    method: 'get',
-    path: '/on',
-    fn: turnOnLights
-  })
+const turnOn = 
+  getMethod({ path: '/on', fn: turnOnLights })
 
-const turnOff = app => 
-  appMethods({ 
-    app,
-    method: 'get',
-    path: '/off',
-    fn: turnOffLights
-  })
+const turnOff = 
+  getMethod({ path: '/off', fn: turnOffLights })
 
 module.exports = {
   getLifx,
