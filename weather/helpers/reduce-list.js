@@ -9,6 +9,7 @@ const {
   append,
   __ 
 } = require('ramda')
+const { getTempAndWeather } = require('./get-temp-and-weather')
 const Future = require('fluture')
 
 const reduceList =
@@ -18,19 +19,7 @@ const reduceList =
       (acc, current) => 
         compose(
           append(__, acc),
-          assoc(
-            'weather',
-            compose(
-              x => ({
-                main: prop('main', x),
-                description: prop('description', x)
-              }),
-              head,
-              prop('weather')
-            )(current)
-          ),
-          objOf('temp'),
-          path(['main', 'temp'])
+          getTempAndWeather
         )(current)
       ,
       []
