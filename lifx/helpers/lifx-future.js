@@ -3,11 +3,11 @@ const futureRequest = require('../../lib/future-request')
 const lifxState = require('./lifx-state')
 const fork = require('../../lib/utils/future_utils/fork')
 
-const lifxFuture = option =>
+const lifxFuture = 
   compose(
     futureRequest,
     lifxState
-  )(option)
+  )
 
 module.exports = {
   lifxFuture

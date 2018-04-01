@@ -21,7 +21,6 @@ const getTempAndWeather = data =>
 const futureGetTempAndWeather =
   compose(
     Future.of,
-    of,
     getTempAndWeather,
     JSON.parse
   )
