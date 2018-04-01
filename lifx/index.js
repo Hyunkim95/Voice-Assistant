@@ -3,16 +3,16 @@ const {
   getLights, 
   turnOnLights, 
   turnOffLights 
-} = require('./methods')
+} = require('./helpers/methods')
 
 const getLifx =
-  getMethod({ path: '/', fn: getLights })
+  getMethod({ path: '/lifx', fn: getLights })
 
 const turnOn = 
-  getMethod({ path: '/on', fn: turnOnLights })
+  getMethod({ path: '/lifx/on', fn: turnOnLights })
 
 const turnOff = 
-  getMethod({ path: '/off', fn: turnOffLights })
+  getMethod({ path: '/lifx/off', fn: turnOffLights })
 
 module.exports = {
   getLifx,

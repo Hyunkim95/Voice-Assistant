@@ -8,7 +8,9 @@ const {
   getLifx,
   turnOn,
   turnOff
- } = require('./lifx/index');
+ } = require('./lifx');
+
+ const { getWeather } = require('./weather');
 
 var app = express();
 
@@ -21,6 +23,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 getLifx(app)
 turnOn(app)
 turnOff(app)
+
+getWeather(app)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

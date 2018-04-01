@@ -1,4 +1,4 @@
-const { lifxFuture } = require('../lib/state-to-future')
+const { lifxFuture } = require('./lifx-future')
 
 const getLights = (req, res, next) => 
   lifxFuture({ method: 'GET' })(res)
