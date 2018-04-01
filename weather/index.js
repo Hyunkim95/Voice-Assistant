@@ -11,7 +11,7 @@ const getForecasts =
 const getCurrentWeather =
   getMethod({ 
     path: '/weather/current', 
-    fn: callbackConstructor(getCurrentWeather)
+    fn: callbackConstructor(getWeather)
   })
 
 module.exports = {
