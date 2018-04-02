@@ -3,7 +3,7 @@ const callbackConstructor = require('../lib/utils/callback-constructor')
 const { getBusTimetable } = require('./helpers/transport-future')
 
 const getBuses =
-  getMethod({ 
+  postMethod({ 
     path: '/transport/bus', 
     fn: callbackConstructor(getBusTimetable)
   })
