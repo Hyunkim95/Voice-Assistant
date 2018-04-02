@@ -1,4 +1,5 @@
 const getMethod = require('../lib/utils/get-method')
+const postMethod = require('../lib/utils/post-method')
 const { getForecast, getWeather } = require('./helpers/methods')
 const callbackConstructor = require('../lib/utils/callback-constructor')
 
@@ -9,7 +10,7 @@ const getForecasts =
   })
 
 const getCurrentWeather =
-  getMethod({ 
+  postMethod({ 
     path: '/weather/current', 
     fn: callbackConstructor(getWeather)
   })

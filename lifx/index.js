@@ -1,4 +1,5 @@
 const getMethod = require('../lib/utils/get-method')
+const postMethod = require('../lib/utils/post-method')
 const callbackConstructor = require('../lib/utils/callback-constructor')
 const { 
   getLights, 
@@ -14,19 +15,19 @@ const getLifx =
   })
 
 const turnOn = 
-  getMethod({ 
+  postMethod({ 
     path: '/lifx/on', 
     fn: callbackConstructor(turnOnLights)
   })
 
 const turnOff = 
-  getMethod({ 
+  postMethod({ 
     path: '/lifx/off', 
     fn: callbackConstructor(turnOffLights)
   })
 
 const turnLightToDefault = 
-  getMethod({ 
+  postMethod({ 
     path: '/lifx/default', 
     fn: callbackConstructor(setToDefault)
   })
