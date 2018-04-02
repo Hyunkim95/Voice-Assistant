@@ -16,6 +16,7 @@
     "fantasy-combinators": "^0.0.1",
     "fluture": "^8.0.2",
     "http-errors": "~1.6.2",
+    "moment": "^2.22.0",
     "morgan": "~1.9.0",
     "nodemon": "^1.17.2",
     "ramda": "^0.25.0",

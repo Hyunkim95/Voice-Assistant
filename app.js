@@ -11,10 +11,14 @@ const {
   turnLightToDefault
  } = require('./lifx');
 
- const { 
+const { 
    getForecasts,
    getCurrentWeather
 } = require('./weather');
+
+const {
+  getBuses
+} = require('./transport')
 
 var app = express();
 
@@ -31,6 +35,8 @@ turnLightToDefault(app)
 
 getForecasts(app)
 getCurrentWeather(app)
+
+getBuses(app)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
