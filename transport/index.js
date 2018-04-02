@@ -1,4 +1,4 @@
-const getMethod = require('../lib/utils/get-method')
+const postMethod = require('../lib/utils/post-method')
 const callbackConstructor = require('../lib/utils/callback-constructor')
 const { getBusTimetable } = require('./helpers/transport-future')
 
