@@ -7,7 +7,8 @@ var logger = require('morgan');
 const { 
   getLifx,
   turnOn,
-  turnOff
+  turnOff,
+  turnLightToDefault
  } = require('./lifx');
 
  const { 
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 getLifx(app)
 turnOn(app)
 turnOff(app)
+turnLightToDefault(app)
 
 getForecasts(app)
 getCurrentWeather(app)

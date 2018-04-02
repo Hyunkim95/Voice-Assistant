@@ -11,6 +11,6 @@ const options = {
   headers: auth
 }
 
-module.exports = body =>
-  modify(appendUrlAndMerge(body))
+module.exports = state => body =>
+  modify(appendUrlAndMerge(state)(body))
     .execWith(options)

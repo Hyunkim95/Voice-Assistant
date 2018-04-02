@@ -3,7 +3,8 @@ const callbackConstructor = require('../lib/utils/callback-constructor')
 const { 
   getLights, 
   turnOnLights, 
-  turnOffLights 
+  turnOffLights,
+  setToDefault
 } = require('./helpers/methods')
 
 const getLifx =
@@ -24,8 +25,15 @@ const turnOff =
     fn: callbackConstructor(turnOffLights)
   })
 
+const turnLightToDefault = 
+  getMethod({ 
+    path: '/lifx/default', 
+    fn: callbackConstructor(setToDefault)
+  })
+
 module.exports = {
   getLifx,
   turnOn,
-  turnOff
+  turnOff,
+  turnLightToDefault
 }
