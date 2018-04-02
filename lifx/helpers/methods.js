@@ -11,6 +11,16 @@ const turnOnLights =
     })
   })
 
+const alarm =
+  lifxFuture('state')({
+    method: 'PUT',
+    body: JSON.stringify({
+      power: 'on',
+      duration: 1800.0,
+      brightness: 1.0
+    })
+  })
+
 const turnOffLights =
   lifxFuture('state')({
     method: 'PUT',

@@ -8,7 +8,6 @@ compose(
   map(
     x => 
       moment(prop('departureTimePlanned', x))
-        .format('LT')
   ),
   filter(
     compose(

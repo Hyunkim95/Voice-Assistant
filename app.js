@@ -21,7 +21,8 @@ const {
 } = require('./transport')
 
 const {
-  getWeatherCron
+  getWeatherCron,
+  setAlarm
 } = require('./cron')
 
 var app = express();
@@ -43,6 +44,7 @@ getCurrentWeather(app)
 getBuses(app)
 
 getWeatherCron()
+setAlarm()
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
