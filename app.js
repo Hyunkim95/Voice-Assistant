@@ -13,7 +13,8 @@ const {
 
 const { 
    getForecasts,
-   getCurrentWeather
+   getCurrentWeather,
+   getWeatherDatas
 } = require('./weather');
 
 const {
@@ -40,6 +41,7 @@ turnLightToDefault(app)
 
 getForecasts(app)
 getCurrentWeather(app)
+getWeatherDatas(app)
 
 getBuses(app)
 

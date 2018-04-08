@@ -14,7 +14,12 @@ const getWeather =
     .chain(futureGetTempAndWeather)
     .chain(setOptionsForLifx)
 
+const getWeatherData = 
+  weatherFuture('weather')
+    .chain(futureGetTempAndWeather)
+
 module.exports = {
   getForecast,
-  getWeather
+  getWeather,
+  getWeatherData
 }
