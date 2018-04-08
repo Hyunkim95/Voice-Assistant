@@ -1,6 +1,10 @@
 const futureRequest = require('../../lib/future-request')
 const config = require('../../lib/config')
 const getTime = require('./get-time')
+const filterLessThanCurrentTime = require('./filter-less-than-current-time')
+const timeFromNow = require('../../lib/time-from-now')
+const formatToTime = require('../../lib/format-to-time')
+const { map, compose } = require('ramda')
 
 const auth = {
   Authorization: `apikey ${config.transportApiKey}`
@@ -18,15 +22,22 @@ const options = {
     departureMonitorMacro: 'true',
     TfNSWDM: 'true',
     mode: 'direct',
-    version: '10.2.1.42',
-    itdDate: '20180402',
-    itdTime: '0816'
+    version: '10.2.1.42'
   }
 }
 
 const getBusTimetable =
   futureRequest(options)
     .chain(getTime)
+    .chain(filterLessThanCurrentTime)
+    .map(
+      map(
+        compose(
+          timeFromNow,
+          formatToTime
+        )
+      )
+    )
 
 module.exports =  {
   getBusTimetable

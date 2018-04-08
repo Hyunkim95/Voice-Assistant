@@ -7,7 +7,7 @@ compose(
   Future.of,
   map(
     x => 
-      moment(prop('departureTimePlanned', x))
+      moment(prop('departureTimePlanned', x)).unix()
   ),
   filter(
     compose(

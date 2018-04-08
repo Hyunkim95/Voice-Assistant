@@ -43,4 +43,5 @@ module.exports = {
   turnOffLights,
   turnOnLights,
   setToDefault,
+  alarm
 }

@@ -2,7 +2,6 @@ const CronJob = require('cron').CronJob;
 const { getBusTimetable } = require('../transport/helpers/transport-future')
 const { getWeather } = require('../weather/helpers/methods')
 const { alarm } = require('../lifx/helpers/methods')
-const getCurrentTime = require('../lib/utils/get-current-time')
 
 const getWeatherCron = () =>
   new CronJob('00 30 07 * * 1-5', function() {
